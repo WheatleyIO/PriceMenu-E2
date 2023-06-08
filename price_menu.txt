@@ -1,0 +1,37 @@
+@name Price Menu
+@inputs EGP:wirelink
+# Coded by Wheatley#2728
+# IO Industries
+    
+if(first() | duped()){
+    EGP:egpClear()
+}
+    
+function void addItem(N,ItemName:string,ItemPrice:string,X,Y)
+{
+    EGP:egpText(N,ItemName,vec2(X,Y))
+    EGP:egpSize(N, 40)
+    EGP:egpFont(N, "arial")
+    EGP:egpColor(N,vec(255, 255, 255))
+
+    EGP:egpText(N + 1,"$", vec2(X + 2,Y + 38))  
+    EGP:egpSize(N + 1, 17)
+    EGP:egpFont(N + 1, "arial")
+    EGP:egpColor(N + 1,vec(191, 255, 127))
+
+    EGP:egpText(N + 2,ItemPrice, vec2(X + 12,Y + 36))  
+    EGP:egpSize(N + 2, 25)
+    EGP:egpFont(N + 2, "arial")
+    EGP:egpColor(N + 2,vec(255, 255, 255))
+}
+
+    # Change These #
+
+    addItem(1,"Item 1","100",22,20)
+    addItem(4,"Item 2","100",22,100)
+    addItem(7,"Item 3","100",22,180)
+    addItem(10,"Item 4","100",22,260)
+    addItem(13,"Item 5","100",22,340)
+    addItem(16,"Item 6","100",22,420)
+
+
